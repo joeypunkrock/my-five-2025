@@ -1,0 +1,12 @@
+<svg viewBox="0 0 64 64" fill="none" aria-label="Mascot is happy" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="28" fill="#F9D390" stroke="#ECA14A" stroke-width="4"/>
+  <ellipse cx="22" cy="28" rx="4" ry="6" fill="#fff"/>
+  <ellipse cx="42" cy="28" rx="4" ry="6" fill="#fff"/>
+  <ellipse cx="22" cy="31" rx="2" ry="2.5" fill="#444"/>
+  <ellipse cx="42" cy="31" rx="2" ry="2.5" fill="#444"/>
+  <path d="M26 40 Q32 47 38 40" stroke="#ECA14A" stroke-width="2" fill="none"/>
+  <ellipse cx="18" cy="16" rx="5" ry="8" fill="#F9D390"/>
+  <ellipse cx="46" cy="16" rx="5" ry="8" fill="#F9D390"/>
+  <ellipse cx="18" cy="14" rx="3" ry="4" fill="#fff"/>
+  <ellipse cx="46" cy="14" rx="3" ry="4" fill="#fff"/>
+</svg>
