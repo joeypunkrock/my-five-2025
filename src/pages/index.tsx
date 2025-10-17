@@ -1,7 +1,7 @@
 import React from "react";
-import Mascot from "@/components/Mascot";
-import MediaList from "@/components/MediaList";
-import { Particles } from "@/components/ui//shadcn-io/particles";
+import Mascot from "@/components/ui/Mascot";
+import MediaList from "@/components/ui/MediaList";
+import { Particles } from "@/components/ui/particles";
 
 const HomePage: React.FC = () => {
   return (
