@@ -12,16 +12,17 @@ import {
 import React, { useRef, useEffect } from "react";
 import { useVideoPlaybackContext } from "./useVideoPlaybackContext";
 
-interface VideoPlayerProps {
+export interface VideoPlayerProps {
   id: string;
   src: string;
   title: string;
   posterSrc?: string;
   posterAlt?: string;
   controls?: boolean;
-  autoPlay?: boolean; // If true AND the card is open, play
+  autoPlay?: boolean;
   loop?: boolean;
   muted?: boolean;
+  onEnded?: () => void; // <-- Accept video end handler
 }
 
 export default function VideoPlayer({
@@ -34,22 +35,18 @@ export default function VideoPlayer({
   autoPlay = false,
   loop = false,
   muted = false,
+  onEnded, // <-- Receive as prop
 }: VideoPlayerProps): React.JSX.Element {
   const mediaPlayerRef = useRef<MediaPlayerInstance>(null);
   const remote = useMediaRemote(mediaPlayerRef);
   const { register, unregister, notifyPlaying } = useVideoPlaybackContext();
 
-  // Register/unregister, and imperative play
   useEffect(() => {
     if (!mediaPlayerRef.current) return;
-    // Register for pause control
     register(id, { pause: () => remote.pause() });
-
-    // If autoPlay is true, play on mount or prop change
     if (autoPlay) {
       remote.play();
     }
-
     return () => unregister(id);
   }, [id, register, unregister, remote, autoPlay]);
   
@@ -69,6 +66,7 @@ export default function VideoPlayer({
       className="rounded-xl shadow-lg"
       style={{ aspectRatio: "16/9" }}
       onPlay={() => notifyPlaying(id)}
+      onEnded={onEnded}  // <-- Pass handler to MediaPlayer
     >
       <MediaProvider>
         <Poster className="vds-poster" src={posterSrc} alt={posterAlt} />

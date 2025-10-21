@@ -20,4 +20,5 @@ export type MascotState = {
   message: string | null;
   messagePosition?: { x: number; y: number } | null; // NEW
   followingElement: HTMLElement | null;
+  manualTransition?: any; // NEW
 };
