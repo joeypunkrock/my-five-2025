@@ -18,5 +18,6 @@ export type MascotState = {
   mood: MascotMood;
   position: MascotPosition;
   message: string | null;
+  messagePosition?: { x: number; y: number } | null; // NEW
   followingElement: HTMLElement | null;
 };

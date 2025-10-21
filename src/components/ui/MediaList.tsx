@@ -27,7 +27,7 @@ export default function MediaList(): React.JSX.Element {
         const item = items.find((it) => `item-${it.id}` === newlyOpened);
         if (item) {
           setMood("celebrate");
-          setMessage(`Enjoying "${item.title}"! 🎉`);
+          setMessage(`Enjoying "${item.title}"! 🎉`, { x: 100, y: -32 });
           latestOpened.current = newlyOpened;
           if (resetTimeout.current) clearTimeout(resetTimeout.current);
           // resetTimeout.current = window.setTimeout(() => {

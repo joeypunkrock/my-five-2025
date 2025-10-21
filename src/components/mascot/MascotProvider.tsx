@@ -5,8 +5,8 @@ import type { MascotMood, MascotState, MascotPosition } from "./types";
 type MascotContextType = {
   state: MascotState;
   setMood: (mood: MascotMood) => void;
-  setMessage: (msg: string | null) => void;
-  moveTo: (pos: MascotPosition, holdMs?: number) => void; // manual override, optional hold duration
+  setMessage: (msg: string | null, pos?: MascotPosition | null) => void;
+  moveTo: (pos: MascotPosition, holdMs?: number) => void;
   followElement: (el: HTMLElement | null) => void;
 };
 
@@ -14,6 +14,7 @@ const defaultState: MascotState = {
   mood: "idle",
   position: { x: 32, y: 32 },
   message: null,
+  messagePosition: null,
   followingElement: null,
 };
 
@@ -24,12 +25,10 @@ export const MascotProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [manual, setManual] = useState(false);
   const manualTimeout = useRef<number | null>(null);
 
-  // For AI/auto movement
   const setPosition = useCallback((pos: MascotPosition) => {
     setState((s) => ({ ...s, position: pos }));
   }, []);
 
-  // Manual override: move mascot, pause AI movement for holdMs then resume
   const moveTo = useCallback((pos: MascotPosition, holdMs: number = 2500) => {
     setManual(true);
     setState((s) => ({ ...s, position: pos }));
@@ -37,19 +36,16 @@ export const MascotProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     manualTimeout.current = window.setTimeout(() => setManual(false), holdMs);
   }, []);
 
-  // Hook for AI-like floating movement
   useMascotMovement({ setPosition, manual });
 
   const setMood = (mood: MascotMood) =>
     setState((s) => ({ ...s, mood }));
 
-  const setMessage = (msg: string | null) =>
-    setState((s) => ({ ...s, message: msg }));
+  const setMessage = (msg: string | null, pos?: MascotPosition | null) =>
+    setState((s) => ({ ...s, message: msg, messagePosition: pos ?? null }));
 
   const followElement = (el: HTMLElement | null) =>
     setState((s) => ({ ...s, followingElement: el }));
-
-  // (Expansion point: Add useEffect for reacting to followElement if desired)
 
   return (
     <MascotContext.Provider
