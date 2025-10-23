@@ -1,4 +1,4 @@
-import type { MascotMood } from "./types";
+import type { MascotMood } from "./Mascot.types";
 
 export const mascotAssets: Record<
   MascotMood,

@@ -1,6 +1,6 @@
 export const MASCOT_MOVEMENT_CONFIG = {
   minInterval: 3500,
-  maxInterval: 12500,
+  maxInterval: 11500,
 
   animation: {
     type: "spring" as const,
@@ -12,18 +12,16 @@ export const MASCOT_MOVEMENT_CONFIG = {
   margin: 32,
   mascotSize: 80,
 
-  // --- ADD THIS FOR EASY MOBILE POSITIONING ---
   mobile: {
-    x: 32,  // px from left edge (or use 'center' to auto-center)
+    x: 32, // px from left edge (or use 'center' to auto-center)
     y: "center", // 'center', 'bottom', or a number (px from top)
-    // y: 180,   // e.g. 180px from top if you want a fixed spot
-    // y: "bottom" // for bottom edge
   },
 
   restrictTo: null as null | { left: number; top: number; right: number; bottom: number },
   avoidUI: false,
 
-  float_animation: {
+  // Mascot floating animation for idle/normal state
+  mascotFloatAnimation: {
     y: [0, -50, 0, 50, 0],
     x: [0, 50, 0, -50, 0],
     transition: {
@@ -33,10 +31,23 @@ export const MASCOT_MOVEMENT_CONFIG = {
     },
   },
 
-  mascot_float_animation: {
-    y: [0, -14, 0, 14, 0],
-    x: [0, 12, 0, -12, 0],
+  // Mascot floating animation when attached to an accordion (smaller float)
+  mascotFloatAnimationAttachedAccordion: {
+    y: [0, -28, 0, 28, 0],
+    x: [0, 8, 0, -8, 0],
     transition: {
+      duration: 12,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+
+  // Message bubble floating animation (subtle)
+  messageFloatAnimation: {
+    y: [0, -46, 0, 31, 0],
+    x: [0, 16, 0, -2, 0],
+    transition: {
+      duration: 12,
       repeat: Infinity,
       ease: "easeInOut",
     },

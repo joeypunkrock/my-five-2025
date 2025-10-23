@@ -14,11 +14,17 @@ export type MascotPosition = {
   y: number;
 };
 
+export type MascotAttachment =
+  | { type: "none" }
+  | { type: "accordion"; id: string }
+  | { type: "somethingelse"; id: string };
+
 export type MascotState = {
   mood: MascotMood;
   position: MascotPosition;
   message: string | null;
   messagePosition?: { x: number; y: number } | null; // NEW
   followingElement: HTMLElement | null;
-  manualTransition?: any; // NEW
+  manualTransition?: unknown;
+  attached: MascotAttachment;
 };

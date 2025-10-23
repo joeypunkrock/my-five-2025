@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from "react";
-import type { MascotPosition } from "./types";
+import type { MascotPosition } from "./Mascot.types";
 import { MASCOT_MOVEMENT_CONFIG } from "./movementConfig";
 import { clampMascotPosition, MASCOT_SIZE, MASCOT_MARGIN } from "./mascotUtils";
 
