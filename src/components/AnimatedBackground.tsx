@@ -127,10 +127,8 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
 
   return (
     <div className="absolute inset-0 pointer-events-none z-10" aria-hidden="true">
-      {/* Inject keyframes CSS for this render */}
       <style>{keyframesCSS}</style>
 
-      {/* Animated gradient background layers */}
       <AnimatePresence>
         {gradientLayers.map((layer) => (
           <motion.div
@@ -146,10 +144,9 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
         ))}
       </AnimatePresence>
 
-      {/* Ambient, oversized, snap-rotating & scaling image */}
       {image && (
         <div
-          className="absolute left-1/2 top-1/2 z-10 pointer-events-none bg-cover bg-center bg-no-repeat"
+          className="fixed left-1/2 top-1/2 z-10 pointer-events-none bg-cover bg-center bg-no-repeat"
           style={{
             width: "110%",
             height: "110%",
@@ -166,7 +163,6 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
         />
       )}
 
-      {/* Foreground animated image layers */}
       <AnimatePresence>
         {imageLayers.map((layer, idx) =>
           layer.image ? (
@@ -177,7 +173,7 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
               initial="initial"
               animate="animate"
               exit="exit"
-              className="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-[var(--rotation)] w-[88%] max-w-[1880px] 2xl:max-w-[2180px] aspect-[16/9] bg-cover bg-center bg-no-repeat pointer-events-none z-20 overflow-hidden rounded-2xl"
+              className="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-[var(--rotation)] w-[98%] 3xl:w-[88%] max-w-[2080px] 2xl:max-w-[1980px] aspect-[16/9] bg-cover bg-center bg-no-repeat pointer-events-none z-20 overflow-hidden rounded-2xl"
               style={
                 {
                   backgroundImage: `url(${layer.image})`,

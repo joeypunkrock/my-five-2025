@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
       />
       <div className="bg-overlay" aria-hidden="true" />
       <MediaList />
-      <Particles className="absolute inset-0" quantity={scene.particleQuantity || 60} color={scene.particleColor || "#ffffff"} />
+      <Particles className="absolute inset-0 z-10" quantity={scene.particleQuantity || 60} color={scene.particleColor || "#ffffff"} />
     </main>
   );
 };
