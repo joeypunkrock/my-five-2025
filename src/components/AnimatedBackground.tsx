@@ -42,13 +42,13 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
   imageOpacity = 0.3,
   durationImage = 0.8,
   durationGradient = 0.6,
-  ambientImageOpacity = 0.02,
+  ambientImageOpacity = 0.04,
   ambientSnapSeconds = 12,
   ambientSteps = 28,
   ambientRotationMin = -2,
   ambientRotationMax = 2,
-  ambientScaleMin = 1,
-  ambientScaleMax = 1.07,
+  ambientScaleMin = 0.9,
+  ambientScaleMax = 1.04,
 }) => {
   // Animated gradient and image layers (unchanged)
   const [gradientLayers, setGradientLayers] = useState<{ id: number; gradient: string }[]>([

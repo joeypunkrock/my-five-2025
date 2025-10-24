@@ -21,7 +21,6 @@ export type SceneContextType = {
 const DEFAULT_SCENE: SceneConfig = {
   gradient: "linear-gradient(to bottom, #0f172a, #a21caf)",
   particleColor: "#ffffff",
-  particleQuantity: 60,
   overlayOpacity: 0.5,
 };
 
@@ -37,7 +36,6 @@ export const SceneProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     root.style.setProperty("--bg-image", scene.backgroundImage ? `url(${scene.backgroundImage})` : "none");
     root.style.setProperty("--bg-overlay-opacity", String(scene.overlayOpacity ?? DEFAULT_SCENE.overlayOpacity));
     root.style.setProperty("--particle-color", scene.particleColor ?? DEFAULT_SCENE.particleColor);
-    root.style.setProperty("--particle-quantity", String(scene.particleQuantity ?? DEFAULT_SCENE.particleQuantity));
     if (scene.gradientFadeDuration) root.style.setProperty("--bg-gradient-fade-duration", scene.gradientFadeDuration);
     if (scene.imageFadeDuration) root.style.setProperty("--bg-image-fade-duration", scene.imageFadeDuration);
     // Add more as needed
