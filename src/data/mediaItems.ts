@@ -61,7 +61,7 @@ export const mediaItems: MediaItem[] = [
     file: "/media/metajoker_become.mp4",
     cover: "/art/song4.jpg",
     scene: {
-      gradient: "linear-gradient(to bottom, #171717, #a21caf)",
+      gradient: "linear-gradient(to bottom, #B8CBDF, #7F9EC2)",
       backgroundImage: "/cover/rainbow2.jpg",
       particleColor: "#f472b6",
       overlayOpacity: 1,

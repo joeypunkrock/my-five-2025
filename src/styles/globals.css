@@ -46,7 +46,6 @@
 
   --bg-gradient: linear-gradient(to bottom, #0f172a, #a21caf); /* fallback */
   --bg-image: none;
-  --bg-overlay-opacity: 0.5;
   --bg-image-opacity: 0.05;
   --particle-color: #ffffff;
   --particle-quantity: 60;
