@@ -52,6 +52,9 @@
   --particle-quantity: 60;
   --bg-gradient-fade-duration: 0.6s;
   --bg-image-fade-duration: 0.2s;
+
+  --video-border-radius: 0px;
+  --video-border: none;
 }
 
 .dark {

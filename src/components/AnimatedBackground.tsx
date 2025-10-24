@@ -74,7 +74,7 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({ gradient
                   inset: 0,
                   pointerEvents: "none",
                   borderRadius: "1.5rem",
-                  background: "radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.60) 96%, rgba(0,0,0,1) 100%)",
+                  background: "radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.60) 100%, rgba(0,0,0,1) 100%)",
                   border: "2px solid rgba(255, 255, 255, 0.1)",
                   zIndex: 2,
                 }}

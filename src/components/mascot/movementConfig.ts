@@ -1,6 +1,6 @@
 export const MASCOT_MOVEMENT_CONFIG = {
-  minInterval: 3500,
-  maxInterval: 11500,
+  minInterval: 18500,
+  maxInterval: 26500,
 
   animation: {
     type: "spring" as const,

@@ -89,7 +89,7 @@ export default function MediaList(): React.JSX.Element {
   return (
     <VideoPlaybackProvider>
       <div className="relative w-full p-6 flex justify-center z-10" data-theme="dark">
-        <div className="w-full max-w-lg">
+        <div className="w-full max-w-screen-lg">
           <Accordion
             type="multiple"
             className="w-full"
@@ -126,7 +126,7 @@ export default function MediaList(): React.JSX.Element {
                   <AccordionContent className="flex flex-col gap-4 text-balance">
                     <VideoPlayer
                       id={item.id}
-                      src={item.videoUrl}
+                      src={item.file}
                       title={item.title}
                       posterSrc={item.thumbnailUrl}
                       autoPlay={openItems.includes(`item-${item.id}`)}
